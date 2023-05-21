@@ -2,13 +2,15 @@ version: '3'
 services:
   app:
     build: .
-    ports :
-      -3030:3030
+    ports:
+      - 3030:3030
     depends_on:
       - db
     environment:
       - DB=mongodb://db:27017/FS_201
-    db:
-      image: mongo
-      ports :
-        - 27017:27017
+
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+
