@@ -7,7 +7,7 @@ services:
     depends_on:
       - db
     environment:
-      - DB=mongodb://db:27017/mydatabase
+      - DB=mongodb://db:27017/FS_201
     db:
       image: mongo
       ports :
