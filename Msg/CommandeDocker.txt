@@ -1,0 +1,5 @@
+docker build -t Demo001_Doker_Image .
+docker run -p 3000:3000 Demo001_Doker_Image
+
+
+docker-compose up
