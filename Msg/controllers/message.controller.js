@@ -1,14 +1,9 @@
 const Message = require('../models/Msg.model');
-const User = require('../../Auth/models/user.model');
 
 async function createMessage(req, res) {
-  const { userId, message } = req.body;
+  const { message } = req.body;
   try {
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({ error: 'User not found.' });
-    }
-    const newMessage = new Message({ user, message });
+    const newMessage = new Message({ message });
     await newMessage.save();
     return res.status(201).json({ message: 'Message sent successfully.' });
   } catch (error) {

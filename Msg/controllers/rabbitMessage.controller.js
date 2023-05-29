@@ -23,8 +23,7 @@ exports.send = async (req, res) => {
       }
     // Create a std
     const message = new Message({
-        text: req.body.text
-        
+        text: req.body.text,
     });
   
     // Save std in the database

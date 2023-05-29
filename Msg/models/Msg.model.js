@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const User = require('../../Auth/models/user.model');
 const messageSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
   message: String,
