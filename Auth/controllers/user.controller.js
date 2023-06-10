@@ -30,7 +30,7 @@ exports.login = async (req,res)=>{
           },
           message: "Login successfull",
           accessToken: token,
-        });
+        })
       }
       else
       res.status(400).send("Invalid Credentials");

@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router , Routes , Route , Link} from 'react-router-dom';
 import Login from './Auth/Login';
 import Subscribe from './Auth/Subscribe';
+import Success from './Auth/Success';
 const Menu = () => {
   return (
     <Router>
@@ -21,6 +22,7 @@ const Menu = () => {
         <Routes>
             <Route path='/login' element={<Login/>}/>
             <Route path='/subscribe' element={<Subscribe/>}/>
+            <Route path='/' element={<Success/>}/>
         </Routes>
     </Router>
   );

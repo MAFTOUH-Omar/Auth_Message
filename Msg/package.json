@@ -17,6 +17,7 @@
     "gitlab": "^14.2.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3",
+    "mongoose-auto-increment": "^5.0.1",
     "node-gitlab-api": "^3.0.2",
     "nodemon": "^2.0.22"
   }

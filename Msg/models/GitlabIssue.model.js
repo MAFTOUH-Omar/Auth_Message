@@ -1,15 +1,12 @@
 const mongoose = require('mongoose');
-
-const gitlabIssueSchema = new mongoose.Schema({
-  project_id: {
-    type: Number,
-    unique: true,
-  },
-  title: String,
-  description: String,
+// Define the GitLabIssue schema
+const gitLabIssueSchema = new mongoose.Schema({
+  issueId: { type: Number, required: true, unique: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
   // Add more fields as needed
 });
+// Create the GitLabIssue model
+const GitLabIssue = mongoose.model('GitLabIssue', gitLabIssueSchema);
 
-const GitlabIssue = mongoose.model('GitlabIssue', gitlabIssueSchema);
-
-module.exports = GitlabIssue;
+module.exports = GitLabIssue;
