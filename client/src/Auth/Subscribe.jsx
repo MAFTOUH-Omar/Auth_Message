@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 const Subscribe = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const [cookies, setCookie] = useCookies(['auth']);
+  const [Err,SetErr]=useState('');
   const handleSubscribe = async () => {
     try {
       const headers = {
         Authorization: 'JWT Mft26100##', // Add your token here
       };
-
-      const response = await axios.post('http://localhost:3030/users/sub',{ fullName,  role: '643a921fb216b77828e9cd39',  email,  password},{ headers });
-      console.log(response.data);
+      const response = await axios.post('http://localhost:3030/users/sub',
+      { fullName,  role: '643a921fb216b77828e9cd39',  email,  password},{ headers })
+      .then((user)=>{
+        console.log(user.data.accessToken)
+        setCookie("auth",user.data.accessToken)
+        navigate("/")
+      })
     } catch (error) {
       console.error(error);
+      SetErr('Subscribe Incorrect');
     }
   };
 
@@ -22,7 +32,7 @@ const Subscribe = () => {
       <h1 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Subscribe</h1>
       <div className="mb-4">
         <label htmlFor="fullName" className="block font-medium mb-1">
-          Full Name
+          Full Name {fullName=="" && <span className="text-red-600">*</span>}
         </label>
         <input
           type="text"
@@ -34,7 +44,7 @@ const Subscribe = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="email" className="block font-medium mb-1">
-          Email
+          Email {email=="" && <span className="text-red-600">*</span>}
         </label>
         <input
           type="email"
@@ -46,7 +56,7 @@ const Subscribe = () => {
       </div>
       <div className="mb-4">
         <label htmlFor="password" className="block font-medium mb-1 ">
-          Password
+          Password {password=="" && <span className="text-red-600">*</span>}
         </label>
         <input
           type="password"
@@ -64,6 +74,7 @@ const Subscribe = () => {
           Subscribe
         </button>
       </div>
+      {Err && <div className="text-slate-50 bg-red-600 text-center my-2 py-3 rounded-lg">{Err}</div>}
     </div>
   );
 };
