@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/auth-message-docker-mern/static/css/main.34186c93.css",
+    "main.js": "/auth-message-docker-mern/static/js/main.c1e56da0.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/auth-message-docker-mern/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/add.svg": "/auth-message-docker-mern/static/media/add.4d8b2292eb3b1fcfef7cf50323680b73.svg",
+    "index.html": "/auth-message-docker-mern/index.html",
+    "static/media/delete.svg": "/auth-message-docker-mern/static/media/delete.434bf2a025187a827ca93e1e67ef5539.svg",
+    "main.34186c93.css.map": "/auth-message-docker-mern/static/css/main.34186c93.css.map",
+    "main.c1e56da0.js.map": "/auth-message-docker-mern/static/js/main.c1e56da0.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/auth-message-docker-mern/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34186c93.css",
+    "static/js/main.c1e56da0.js"
+  ]
+}
